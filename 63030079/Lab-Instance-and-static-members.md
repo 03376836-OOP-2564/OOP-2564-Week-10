@@ -81,26 +81,27 @@ namespace method_examples
 2. เติมค่าลงในตารางต่อไปนี้ให้ครบถ้วน
 
 
-|   วัตถุ    | hashcode| value|
-|----------|---------|------|
-| s1       |         | -    |
-| s2       |         | -    |
-| s3       |         | -    |
-| s1.id    |         |      |
-| s1.     |         |      |
-| s2.id    |         |      |
-| s2.     |         |      |
-| s3.id    |         |      |
-| s3.     |         |      |
+|  วัตถุ  |hashcode| 	   value	  |
+|:-----:|:------:|:--------------------:|
+| s1    |029E8405| -    	      	|
+| s2    |0392A42D| -    	      	|
+| s3    |0027C59A| -    	      	|
+| s1.id |3E9	 |1001			|
+| s1.id2|A13EFBDE|Computer Engineering	|
+| s2.id |3EA	 |1002			|
+| s2.id2|4F441FB9|Electrical Engineering|
+| s3.id |3EB	 |1003			|
+| s3.id2|C33DFCB5|Mechanical Engineering|
 
 หลังจากสร้างและกำหนดค่าให้กับ instance ทั้งสามแล้ว ให้บันทึกค่าตัวแปร static ของคลาส (`    `) อีกครั้ง
 
-|   วัตถุ    | hashcode| value|
-|----------|---------|------|
-| s1.     |         |      |
-| s2.     |         |      |
-| s3.     |         |      |
+|   วัตถุ    |hashcode| 	value	     |
+|----------|--------|----------------------|
+| s1.id2   |C33DFCB5|Mechanical Engineering|
+| s2.id2   |C33DFCB5|Mechanical Engineering|
+| s3.id2   |C33DFCB5|Mechanical Engineering|
 
+![image](https://user-images.githubusercontent.com/92081920/163839365-259b74ef-0d0d-4312-b201-df88830e93c2.png)
 
 3. สรุปผลการทดลอง
 
