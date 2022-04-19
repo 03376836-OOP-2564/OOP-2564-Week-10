@@ -268,12 +268,14 @@ class Program
 using System;
 class Person
 {
-    private int age ;       // years
+    private int age;       // years
     const int MaxAge = 120;
     const int MinAge = 1;
-    public int Age {
+    public int Age
+    {
         get { return age; }
-        set {
+        set
+        {
             if (value > MaxAge)
             {
                 Console.WriteLine($"Error: maximum age  is {MaxAge} Years.");
@@ -284,17 +286,20 @@ class Person
             }
             else
                 age = value;
-        } 
+        }
     }
-    public string AgeGroup 
+    public string AgeGroup
     {
-        get 
+        get
         {
-            if (age > 0 && age < 3) return "Babies";
-            // else if (age > 3 && age < 13) return "Children";
-            // TODO: เพิ่ม if else (....) return "..." ให้ครบทุกช่วงอายุ
+            if (age >= 0 && age <= 2) return "Babies";
+            else if (age >= 3 && age <= 12) return "Children";
+            else if (age >= 13 && age <= 19) return "Teens";
+            else if (age >= 20 && age <= 30) return "Young Adults";
+            else if (age >= 31 && age <= 60) return "Adults";
+            else if (age >= 61 && age <= 120) return "Old Adults";
             else return "";
-        } 
+        }
     }
 }
 class Program
@@ -303,20 +308,35 @@ class Program
     {
         Person GrandPa = new Person();
         GrandPa.Age = 99;
-        Console.WriteLine($"GrandPa.Age = {GrandPa.Age}");
+        Console.WriteLine($"GrandPa.Age = {GrandPa.Age}, AgeGroup = {GrandPa.AgeGroup}");
         Person GrandMa = new Person();
         GrandMa.Age = 125;
-        Console.WriteLine($"GrandMa.Age = {GrandMa.Age}");
+        //Console.WriteLine($"GrandMa.Age = {GrandMa.Age}, AgeGroup = {GrandMa.AgeGroup}");
 
         Person GrandSon = new Person();
         GrandSon.Age = 1;
         Console.WriteLine($"GrandSon.Age = {GrandSon.Age}, AgeGroup = {GrandSon.AgeGroup}");
 
-        // TODO: ทดสอบการแสดงผลให้ครบทุกช่วงอายุ
+        Person Children = new Person();
+        Children.Age = 3;
+        Console.WriteLine($"GrandSon.Age = {Children.Age}, AgeGroup = {Children.AgeGroup}");
+
+        Person Teen = new Person();
+        Teen.Age = 19;
+        Console.WriteLine($"GrandSon.Age = {Teen.Age}, AgeGroup = {Teen.AgeGroup}");
+
+        Person Young_Adults = new Person();
+        Young_Adults.Age = 21;
+        Console.WriteLine($"GrandSon.Age = {Young_Adults.Age}, AgeGroup = {Young_Adults.AgeGroup}");
+
+        Person Adults = new Person();
+        Adults.Age = 59;
+        Console.WriteLine($"GrandSon.Age = {Adults.Age}, AgeGroup = {Adults.AgeGroup}");
 
     }
 }
-
 ```
 3. รันโปรแกรม โดยจะต้องมีการแสดงผลครบทุกช่วงอายุ
+
+![image](https://user-images.githubusercontent.com/92081920/164050905-44bdfb98-3668-4e26-89da-ef61275fa2cb.png)
 
