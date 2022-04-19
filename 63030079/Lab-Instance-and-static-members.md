@@ -153,14 +153,17 @@ class Program
 ```
 
 2. บันทึกผลจากการรันโปรแกรม
+
+![image](https://user-images.githubusercontent.com/92081920/164027650-dff06857-0b5e-489d-ae79-e6029bfd52ed.png)
+
 3. แก้ไข code ให้เป็นดังต่อไปนี้
 
 ```cs
 using System;
 class Student
 {
-	static public int id;
-	static public void PrintID()
+	public int id;
+	public void PrintID()
 	{
         Console.WriteLine($"student ID = {id}");
 	}
@@ -179,9 +182,17 @@ class Program
 ```
 4. บันทึกผลจากการรันโปรแกรม
 
+![image](https://user-images.githubusercontent.com/92081920/164027855-7fcde09c-775f-44b3-8507-e6ead1f6cd60.png)
+
 ###  คำถาม ### 
 1. จงเปรียบเทียบผลที่ได้จากการรัน source code ในข้อ 1 และ ข้อ 3 ว่าเหมือนกันหรือไม่
+```
+   ผลที่ได้จากการรันโปรแกรมไม่เหมือนกัน
+```
 2. เหตุใดผลการเปรียบเทียบจึงเป็นเช่นนั้น
-
+```
+   ในข้อ 1 เป็นการประกาศตัวแปรและ method ให้เป็นแบบ static และเรียกใช้งานโดยกำหนดค่าให้กับตัวแปร id ของ Student
+   ในข้อ 3 เป็นการประกาศตัวแปรและ method ให้เป็น public และเรียกใช้งานโดยสร้าง instance ของ Student
+```
 
 
