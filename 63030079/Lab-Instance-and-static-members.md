@@ -13,16 +13,16 @@ namespace method_examples
     class Student
     {
         int id;                 // instance member
-        static string     ;    // static member
+        static string id2;    // static member
         internal void SetId(int value)
         {
             id = value;
             ShowId();    
         }
-        internal void Set    (string value)
+        internal void SetId2(string value)
         {
-                 = value;
-            Show    ();
+            id2 = value;
+            ShowId2();
         }
 
         internal void ShowId()
@@ -32,7 +32,7 @@ namespace method_examples
 
         internal unsafe void Show    ()
         {
-            Console.WriteLine($"     : hashcode = [{    .GetHashCode():X}], value = {    }");
+            Console.WriteLine($"id2 : hashcode = [{id2.GetHashCode():X}], value = {id2}");
         }
     }
 
@@ -55,23 +55,23 @@ namespace method_examples
 
             //  กำหนดและแสดงค่าใน member ของ s1
             s1.SetId(1001);
-            s1.Set    ("Computer Engineering");
+            s1.SetId2("Computer Engineering");
             Console.WriteLine();
 
             //  กำหนดและแสดงค่าใน member ของ s2
             s2.SetId(1002);
-            s2.Set    ("Electrical Engineering");
+            s2.SetId2("Electrical Engineering");
             Console.WriteLine();
 
             //  กำหนดและแสดงค่าใน member ของ s3
             s3.SetId(1003);
-            s3.Set    ("Mechanical Engineering");
+            s3.SetId2("Mechanical Engineering");
             Console.WriteLine();
 
             //  แสดงค่าใน static member ของ s1-s3 อีกครั้ง
-            Console.Write("S1."); s1.Show    ();
-            Console.Write("S2."); s2.Show    ();
-            Console.Write("S3."); s3.Show    ();
+            Console.Write("S1."); s1.ShowId2();
+            Console.Write("S2."); s2.ShowId2();
+            Console.Write("S3."); s3.ShowId2();
         }
     }
 }
