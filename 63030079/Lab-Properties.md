@@ -241,7 +241,7 @@ class Program
 ```
 2. รันโปรแกรม บันทึกผล
 
-
+![image](https://user-images.githubusercontent.com/92081920/164043448-cfd48116-5418-48f3-8560-7a0d45d56f29.png)
 
 ## การทดลอง 10.7  properties ที่มีการทำงานและเป็นชนิด read-only ##
 
