@@ -1,15 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Project_10._5
+class Lamp
 {
-    internal class Program
+    private int voltage = 12;
+    private string color = "White";
+    public int Voltage
     {
-        static void Main(string[] args)
-        {
-        }
+        get { return voltage; }
+    }
+    public string Color
+    {
+        get { return color; }
+        set { color = value; }
+    }
+}
+class Program
+{
+    static void Main()
+    {
+        Lamp TrafficAmberLight = new Lamp();
+        Lamp TrafficRedLight = new Lamp();
+        Lamp TrafficGreenLight = new Lamp();
+
+        Console.WriteLine($"Traffic light #1 : color = {TrafficGreenLight.Color}, Voltage = {TrafficGreenLight.Voltage} V.");
+        Console.WriteLine($"Traffic light #2 : color = {TrafficAmberLight.Color}, Voltage = {TrafficAmberLight.Voltage} V.");
+        Console.WriteLine($"Traffic light #3 : color = {TrafficRedLight.Color}, Voltage = {TrafficRedLight.Voltage} V.");
     }
 }
