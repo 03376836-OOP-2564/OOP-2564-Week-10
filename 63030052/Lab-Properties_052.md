@@ -178,7 +178,7 @@ class Program
 }
 ```
 6. รันโปรแกรม บันทึกผล
-
+![image](https://user-images.githubusercontent.com/92083472/167296130-9a69e2df-4ca1-415a-8d94-fd0fd0eb82d9.png)
 
 ### คำถาม ###
 1. โปรแกรมนี้ทำงานได้หรือไม่ ถ้าไม่ได้ เกิดจากอะไร
