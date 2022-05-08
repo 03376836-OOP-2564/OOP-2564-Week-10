@@ -311,4 +311,5 @@ class Program
 
 ```
 3. รันโปรแกรม โดยจะต้องมีการแสดงผลครบทุกช่วงอายุ
+![image](https://user-images.githubusercontent.com/92083472/167296267-07ef6a14-79b7-49b6-9073-6b865652b15e.png)
 
