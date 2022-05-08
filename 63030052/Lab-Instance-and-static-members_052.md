@@ -143,6 +143,7 @@ class Program
 ```
 
 2. บันทึกผลจากการรันโปรแกรม
+![image](https://user-images.githubusercontent.com/92083472/167295369-4521f80b-56ea-4ff1-9471-080808c159d3.png)
 3. แก้ไข code ให้เป็นดังต่อไปนี้
 
 ```cs
