@@ -86,20 +86,20 @@ namespace method_examples
 | s1       |         | -    |
 | s2       |         | -    |
 | s3       |         | -    |
-| s1.id    |         |      |
-| s1.     |         |      |
-| s2.id    |         |      |
-| s2.     |         |      |
-| s3.id    |         |      |
-| s3.     |         |      |
+| s1.id    |3E9|1001|
+| s1.name |A7CDCB0E|Computer Engineering|
+| s2.id    |3EA|1002|
+| s2.name |7E45508C|Electrical Engineering|
+| s3.id    |3EB|1003|
+| s3.name |16EC5983|Mechanical Engineering|
 
-หลังจากสร้างและกำหนดค่าให้กับ instance ทั้งสามแล้ว ให้บันทึกค่าตัวแปร static ของคลาส (`    `) อีกครั้ง
+หลังจากสร้างและกำหนดค่าให้กับ instance ทั้งสามแล้ว ให้บันทึกค่าตัวแปร static ของคลาส (`name`) อีกครั้ง
 
 |   วัตถุ    | hashcode| value|
 |----------|---------|------|
-| s1.     |         |      |
-| s2.     |         |      |
-| s3.     |         |      |
+| s1.name |16EC5983|Mechanical Engineering|
+| s2.name |16EC5983|Mechanical Engineering|
+| s3.name |16EC5983|Mechanical Engineering|
 
 
 3. สรุปผลการทดลอง
