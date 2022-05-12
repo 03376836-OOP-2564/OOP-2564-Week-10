@@ -45,11 +45,19 @@ class Program
 
 ```
 2. บันทึกผลจากการรันโปรแกรม
+![image](https://user-images.githubusercontent.com/92078775/168034322-ac871ab6-9886-42ee-93b9-cbe642f68816.png)
+
 
 ### คำถาม ###
 1. โปรแกรมนี้ทำงานได้หรือไม่ ถ้าไม่ได้ ต้องแก้ไขอย่างไร
-2. ทำไมเราต้องมี properties ทั้งๆ ที่มี fields อยู่แล้ว แค่ประกาศเป็น public ก็ใช้งานจากที่ไหนก็ได้
+```
+โปรเเกรมสามารถทำงานได้
+```
+3. ทำไมเราต้องมี properties ทั้งๆ ที่มี fields อยู่แล้ว แค่ประกาศเป็น public ก็ใช้งานจากที่ไหนก็ได้
+```
+เพราะการกำหนด properties ต่าง ๆ สามารถกำหนดได้ว่าจะสามารถทำให้อ่านได้อย่างเดียว เขียนอย่างเดียว หรือทั้งเขียนและอ่านได้
 
+```
 
 ## การทดลอง 10.5 Read-only properties ##
 
@@ -87,6 +95,7 @@ class Program
 
 ```
 2. รันโปรแกรม บันทึกผล
+![image](https://user-images.githubusercontent.com/92078775/168035139-056ec25a-f26b-483b-b09b-8ef2def65231.png)
 
 จากโปรแกรมข้างบน จะเห็นว่าสีของไฟจราจรที่โปรแกรมรายงานออกมาจะยังไม่ตรงตามความเป็นจริง เพราะเมื่อเราไม่ทำการกำหนดค่าให้กับ field นั้นๆ โปรแกรมก็จะดึงค่า default ที่กำหนดในคลาสมาใช้
 
@@ -130,6 +139,7 @@ class Program
 
 
 4. รันโปรแกรม บันทึกผล
+![image](https://user-images.githubusercontent.com/92078775/168035262-86292c3f-cea6-4421-8ce7-319e76cb5591.png)
 
 จากโปรแกรมข้างบน จะเห็นว่าสีของไฟจราจรที่โปรแกรมรายงานออกมาตรงตามความเป็นจริงแล้ว แต่เราต้องการกำหนดให้หลอดไฟรับแรงดัน 220 volt จึงต้องแก้ไขที่ field ที่ชื่อ voltage (แต่ต้องทำผ่าน property ที่ชื่อ Lamp.Voltage)
 
@@ -176,11 +186,14 @@ class Program
 }
 ```
 6. รันโปรแกรม บันทึกผล
+![image](https://user-images.githubusercontent.com/92078775/168035506-d093e72a-3cfd-4b4c-989d-b0d7a8457cf7.png)
 
 
 ### คำถาม ###
 1. โปรแกรมนี้ทำงานได้หรือไม่ ถ้าไม่ได้ เกิดจากอะไร
-
+```
+ทำงานไม่ได้เพราะ การกำหนด Property ให้อ่านได้เท่านั้นทำให้ไม่สามารถปรับเเละเเก้ไขได้
+```
 
 ## การทดลอง 10.6  properties ที่มีการทำงาน ##
 
@@ -230,6 +243,7 @@ class Program
 
 ```
 2. รันโปรแกรม บันทึกผล
+![image](https://user-images.githubusercontent.com/92078775/168035928-9cfc581f-c13e-4c28-8a23-e4d45d3c0712.png)
 
 
 
@@ -309,4 +323,78 @@ class Program
 
 ```
 3. รันโปรแกรม โดยจะต้องมีการแสดงผลครบทุกช่วงอายุ
+
+``` cs
+using System;
+class Person
+{
+    private int age;       // years
+    const int MaxAge = 120;
+    const int MinAge = 1;
+    public int Age
+    {
+        get { return age; }
+        set
+        {
+            if (value > MaxAge)
+            {
+                Console.WriteLine($"Error: maximum age  is {MaxAge} Years.");
+            }
+            else if (value < MinAge)
+            {
+                Console.WriteLine($"Error: minimum age  is {MinAge} Year.");
+            }
+            else
+                age = value;
+        }
+    }
+    public string AgeGroup
+    {
+        get
+        {
+            if (age >= 0 && age <= 2) return "Babies";
+            else if (age >= 3 && age <= 12) return "Children";
+            else if (age >= 13 && age <= 19) return "Teens";
+            else if (age >= 20 && age <= 30) return "Young Adults";
+            else if (age >= 31 && age <= 60) return "Adults";
+            else if (age >= 61 && age <= 120) return "Old Adults";
+            else return "";
+        }
+    }
+}
+class Program
+{
+    static void Main()
+    {
+        Person GrandPa = new Person();
+        GrandPa.Age = 120;
+        Console.WriteLine($"GrandPa.Age = {GrandPa.Age}, AgeGroup = {GrandPa.AgeGroup}");
+        Person GrandMa = new Person();
+        GrandMa.Age = 125;
+        //Console.WriteLine($"GrandMa.Age = {GrandMa.Age}, AgeGroup = {GrandMa.AgeGroup}");
+
+        Person GrandSon = new Person();
+        GrandSon.Age = 1;
+        Console.WriteLine($"GrandSon.Age = {GrandSon.Age}, AgeGroup = {GrandSon.AgeGroup}");
+
+        Person Children = new Person();
+        Children.Age = 3;
+        Console.WriteLine($"GrandSon.Age = {Children.Age}, AgeGroup = {Children.AgeGroup}");
+
+        Person Teen = new Person();
+        Teen.Age = 15;
+        Console.WriteLine($"GrandSon.Age = {Teen.Age}, AgeGroup = {Teen.AgeGroup}");
+
+        Person Young_Adults = new Person();
+        Young_Adults.Age = 26;
+        Console.WriteLine($"GrandSon.Age = {Young_Adults.Age}, AgeGroup = {Young_Adults.AgeGroup}");
+
+        Person Adults = new Person();
+        Adults.Age = 59;
+        Console.WriteLine($"GrandSon.Age = {Adults.Age}, AgeGroup = {Adults.AgeGroup}");
+
+    }
+}
+```
+![image](https://user-images.githubusercontent.com/92078775/168037727-93dfe16c-b6a4-49bf-a29c-fd92adc2853b.png)
 
