@@ -78,7 +78,7 @@ namespace method_examples
 
 ```
 
-![Instance](.im/Instance.png)
+![Instance](./im/Instance.png)
 
 2. เติมค่าลงในตารางต่อไปนี้ให้ครบถ้วน
 
@@ -162,7 +162,7 @@ class Program
 
 2. บันทึกผลจากการรันโปรแกรม
 
-![Student](.im/Student.png)
+![Student](./im/Student.png)
 
 3. แก้ไข code ให้เป็นดังต่อไปนี้
 
@@ -190,7 +190,7 @@ class Program
 ```
 4. บันทึกผลจากการรันโปรแกรม
 
-![error1](.im/error1.png)
+![error1](./im/error1.png)
 
 ###  คำถาม ### 
 1. จงเปรียบเทียบผลที่ได้จากการรัน source code ในข้อ 1 และ ข้อ 3 ว่าเหมือนกันหรือไม่
