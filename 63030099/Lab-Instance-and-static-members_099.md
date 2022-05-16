@@ -13,16 +13,16 @@ namespace method_examples
     class Student
     {
         int id;                 // instance member
-        static string     ;    // static member
+        static string id2;    // static member
         internal void SetId(int value)
         {
             id = value;
-            ShowId();    
+            ShowId();
         }
-        internal void Set    (string value)
+        internal void SetId2(string value)
         {
-                 = value;
-            Show    ();
+            id2 = value;
+            ShowId2();
         }
 
         internal void ShowId()
@@ -30,9 +30,9 @@ namespace method_examples
             Console.WriteLine($"id : hashcode = [{this.id.GetHashCode():X}], value = {id}");
         }
 
-        internal unsafe void Show    ()
+        internal void ShowId2()
         {
-            Console.WriteLine($"     : hashcode = [{    .GetHashCode():X}], value = {    }");
+            Console.WriteLine($"id2 : hashcode = [{Student.id2.GetHashCode():X}], value = {id2}");
         }
     }
 
@@ -55,23 +55,23 @@ namespace method_examples
 
             //  กำหนดและแสดงค่าใน member ของ s1
             s1.SetId(1001);
-            s1.Set    ("Computer Engineering");
+            s1.SetId2("Computer Engineering");
             Console.WriteLine();
 
             //  กำหนดและแสดงค่าใน member ของ s2
             s2.SetId(1002);
-            s2.Set    ("Electrical Engineering");
+            s2.SetId2("Electrical Engineering");
             Console.WriteLine();
 
             //  กำหนดและแสดงค่าใน member ของ s3
             s3.SetId(1003);
-            s3.Set    ("Mechanical Engineering");
+            s3.SetId2("Mechanical Engineering");
             Console.WriteLine();
 
             //  แสดงค่าใน static member ของ s1-s3 อีกครั้ง
-            Console.Write("S1."); s1.Show    ();
-            Console.Write("S2."); s2.Show    ();
-            Console.Write("S3."); s3.Show    ();
+            Console.Write("S1."); s1.ShowId2();
+            Console.Write("S2."); s2.ShowId2();
+            Console.Write("S3."); s3.ShowId2();
         }
     }
 }
@@ -83,33 +83,45 @@ namespace method_examples
 
 |   วัตถุ    | hashcode| value|
 |----------|---------|------|
-| s1       |         | -    |
-| s2       |         | -    |
-| s3       |         | -    |
-| s1.id    |         |      |
-| s1.     |         |      |
-| s2.id    |         |      |
-| s2.     |         |      |
-| s3.id    |         |      |
-| s3.     |         |      |
+| s1       |029E8405 | -    |
+| s2       |0392A42D | -    |
+| s3       |0027C59A | -    |
+| s1.id    |3E9      |1001  |
+| s1.     |336628C9  |Computer Engineering |
+| s2.id    |3EA     |1002   |
+| s2.     |8E5E4AEF |Electrical Engineering |
+| s3.id    |3EB     |1003   |
+| s3.     |D064EC42 |Mechanical Engineering |
 
 หลังจากสร้างและกำหนดค่าให้กับ instance ทั้งสามแล้ว ให้บันทึกค่าตัวแปร static ของคลาส (`    `) อีกครั้ง
 
 |   วัตถุ    | hashcode| value|
 |----------|---------|------|
-| s1.     |         |      |
-| s2.     |         |      |
-| s3.     |         |      |
+| s1.     |D064EC42  |Mechanical Engineering |
+| s2.     |D064EC42  |Mechanical Engineering |
+| s3.     |D064EC42  |Mechanical Engineering |
 
+![image](https://user-images.githubusercontent.com/92079514/168632389-3dffe3a5-f8c7-4716-b6b9-d20d5094146e.png)
 
 3. สรุปผลการทดลอง
 
 ### คำถาม ###
 1. ตัวแปร instance คืออะไร
-2. ตัวแปร static คืออะไร
-3. ตัวแปรทั้งสอง ทำงานต่างกันอย่างไร
-4. ตัวแปรทั้งสอง ให้ผลต่างกันอย่างไร
 
+  -Instance คือ ตัวแปรชนิดหนึ่งที่คงอยู่ และทำงานในระดับของ Class กระบวนการทำงานนั้นจะเกิดพร้อมกับการทำงานของ Class ไม่อยู่นอก method, constructor หรือ block สามารถเข้าถึงได้โดยตรงจากการเรียกใช้งานภายใน Class หรือเรียกภายนอก Class ผ่านทาง Interface Public Method
+  
+2. ตัวแปร static คืออะไร
+  
+  -ประเภทตัวแปรแบบหนึ่งที่มีการใช้คำสั่ง (Keyword) ว่า static วางไว้ข้างหน้าตัวแปร เพื่อประกาศให้โปรแกรมรู้ว่า ตัวแปรนี้เป็นตัวแปรแบบ static ของ class โดยเป็นตัวแปรแบบค่าคงที่
+  
+3. ตัวแปรทั้งสอง ทำงานต่างกันอย่างไร
+   
+   -ตัวแปรแบบ instance จะถูกสร้างขึ้นมาเมื่อมีการสร้าง Objectและตัวแปรแบบ static จะใช้กับ Class เท่านั้น ซึ่ง Class จะสามารถมีได้แค่ Class เดียว
+   
+4. ตัวแปรทั้งสอง ให้ผลต่างกันอย่างไร
+  
+  -instance สามารถเข้าถึงได้โดยตรงจากการเรียกใช้งานภายใน Class หรือเรียกภายนอก Class และการสร้าง Object
+  -static สามารถถูกเรียกใช้งานได้ทันทีจากภายใน Class และค่าของตัวแปรจะคงที่ไม่เปลี่ยนแปลง
 
 ##  การทดลองที่ 10.2 ##
 
@@ -138,6 +150,9 @@ class Program
 ```
 
 2. บันทึกผลจากการรันโปรแกรม
+
+![image](https://user-images.githubusercontent.com/92079514/168635959-9bfd739a-da79-479c-b1cc-2ca6296f15d4.png)
+
 3. แก้ไข code ให้เป็นดังต่อไปนี้
 
 ```cs
@@ -164,9 +179,16 @@ class Program
 ```
 4. บันทึกผลจากการรันโปรแกรม
 
+![image](https://user-images.githubusercontent.com/92079514/168636080-a63d5d8d-2fb1-4e68-b1a5-fa24a75aac7e.png)
+
 ###  คำถาม ### 
 1. จงเปรียบเทียบผลที่ได้จากการรัน source code ในข้อ 1 และ ข้อ 3 ว่าเหมือนกันหรือไม่
-2. เหตุใดผลการเปรียบเทียบจึงเป็นเช่นนั้น
+   
+   -ผลที่ได้จากการรันโปรแกรมไม่เหมือนกัน
 
+2. เหตุใดผลการเปรียบเทียบจึงเป็นเช่นนั้น
+   
+   -ข้อที่ 1 จะเป็นการประกาศตัวแปรและ method ให้เป็นแบบ static และเรียกใช้งานโดยกำหนดค่าให้กับตัวแปร id ของ Student
+   ส่วนในข้อที่ 3 จะเป็นการประกาศตัวแปรและ method ให้เป็นแบบ public และเรียกใช้งานโดยสร้าง instance ของ Student
 
 
