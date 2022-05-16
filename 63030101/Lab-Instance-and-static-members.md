@@ -8,21 +8,21 @@
 ```cs
 using System;
 
-namespace method_examples
+namespace Project_10._1
 {
     class Student
     {
         int id;                 // instance member
-        static string     ;    // static member
+        static string id2;    // static member
         internal void SetId(int value)
         {
             id = value;
-            ShowId();    
+            ShowId();
         }
-        internal void Set    (string value)
+        internal void SetId2(string value)
         {
-                 = value;
-            Show    ();
+            id2 = value;
+            ShowId2();
         }
 
         internal void ShowId()
@@ -30,9 +30,9 @@ namespace method_examples
             Console.WriteLine($"id : hashcode = [{this.id.GetHashCode():X}], value = {id}");
         }
 
-        internal unsafe void Show    ()
+        internal void ShowId2()
         {
-            Console.WriteLine($"     : hashcode = [{    .GetHashCode():X}], value = {    }");
+            Console.WriteLine($"id2: hashcode = [{ id2.GetHashCode():X}], value = { id2   }");
         }
     }
 
@@ -55,23 +55,23 @@ namespace method_examples
 
             //  กำหนดและแสดงค่าใน member ของ s1
             s1.SetId(1001);
-            s1.Set    ("Computer Engineering");
+            s1.SetId2("Computer Engineering");
             Console.WriteLine();
 
             //  กำหนดและแสดงค่าใน member ของ s2
             s2.SetId(1002);
-            s2.Set    ("Electrical Engineering");
+            s2.SetId2("Electrical Engineering");
             Console.WriteLine();
 
             //  กำหนดและแสดงค่าใน member ของ s3
             s3.SetId(1003);
-            s3.Set    ("Mechanical Engineering");
+            s3.SetId2("Mechanical Engineering");
             Console.WriteLine();
 
             //  แสดงค่าใน static member ของ s1-s3 อีกครั้ง
-            Console.Write("S1."); s1.Show    ();
-            Console.Write("S2."); s2.Show    ();
-            Console.Write("S3."); s3.Show    ();
+            Console.Write("S1."); s1.ShowId2();
+            Console.Write("S2."); s2.ShowId2();
+            Console.Write("S3."); s3.ShowId2();
         }
     }
 }
@@ -83,26 +83,25 @@ namespace method_examples
 
 |   วัตถุ    | hashcode| value|
 |----------|---------|------|
-| s1       |0378734A | -    |
-| s2       |033C0D9D | -    |
-| s3       |011C7A8C | -    |
-| s1.id    |3E9      |1001  |
-| s1.      |AB0A91D1 |Computer Engineering  |
-| s2.id    |3EA      |1002  |
-| s2.      |6F43B3FF |Electrical Engineering  |
-| s3.id    |3EB      |1003  |
-| s3.      |B3DAE0B  |Mechanical Engineering  |
+| s1       |0378734A |  -   |
+| s2       |033C0D9D |  -   |
+| s3       |011C7A8C |  -   |
+| s1.id    |   3E9   | 1001 |
+| s1.      |75F6F514 | Computer Engineering  |
+| s2.id    |   3EA   | 1002 |
+| s2.      |4759AE85 | Electrical Engineering  |
+| s3.id    |   3EB   | 1003 |
+| s3.      |D1D19C44 | Mechanical Engineering   |
 
 หลังจากสร้างและกำหนดค่าให้กับ instance ทั้งสามแล้ว ให้บันทึกค่าตัวแปร static ของคลาส (`    `) อีกครั้ง
 
 |   วัตถุ    | hashcode| value|
 |----------|---------|------|
-| s1.      |B3DAE0B  |Mechanical Engineering      |
-| s2.      |B3DAE0B  |Mechanical Engineering      |
-| s3.      |B3DAE0B  |Mechanical Engineering      |
+| s1.      |D1D19C44 | Mechanical Engineering |
+| s2.      |D1D19C44 | Mechanical Engineering |
+| s3.      |D1D19C44 | Mechanical Engineering |
 
-
-![image](https://user-images.githubusercontent.com/92081596/168624492-790b344b-dee0-4a2a-8ead-6477d301c89d.png)
+![image](https://user-images.githubusercontent.com/92081596/168635640-ec3a6ccc-1094-4a69-b1aa-c298209ae6fc.png)
 
 
 3. สรุปผลการทดลอง
@@ -128,6 +127,8 @@ namespace method_examples
   instance สามารถเข้าถึงได้โดยตรงจากการเรียกใช้งานภายใน Class หรือเรียกภายนอก Class และการสร้าง Object
   static สามารถถูกเรียกใช้งานได้ทันทีจากภายใน Class และค่าของตัวแปรจะคงที่ไม่เปลี่ยนแปลง
 ```
+
+
 ##  การทดลองที่ 10.2 ##
 
 1. ให้นักศึกษาสร้าง project ชนิด console แล้วแก้ไข  sourrce code ตามโปรแกรมด้านล่างนี้
@@ -155,8 +156,7 @@ class Program
 ```
 
 2. บันทึกผลจากการรันโปรแกรม
-
-![image](https://user-images.githubusercontent.com/92081596/168625532-bc3ed0ad-2b36-4f73-9935-76b346ebc3c3.png)
+![image](https://user-images.githubusercontent.com/92081596/168636187-b7a4c7d9-ba9c-418d-9cd1-37e41fba24a6.png)
 
 3. แก้ไข code ให้เป็นดังต่อไปนี้
 
@@ -183,9 +183,7 @@ class Program
 }
 ```
 4. บันทึกผลจากการรันโปรแกรม
-
-![image](https://user-images.githubusercontent.com/92081596/168625920-d55b6089-09d5-4be4-82ac-04d26b9c5db3.png)
-
+![image](https://user-images.githubusercontent.com/92081596/168636291-708bb5d9-4a7c-47ca-95a5-cbf6862090f6.png)
 
 ###  คำถาม ### 
 1. จงเปรียบเทียบผลที่ได้จากการรัน source code ในข้อ 1 และ ข้อ 3 ว่าเหมือนกันหรือไม่
