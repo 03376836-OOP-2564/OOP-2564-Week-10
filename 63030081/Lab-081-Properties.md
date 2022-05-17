@@ -46,10 +46,18 @@ class Program
 ```
 2. บันทึกผลจากการรันโปรแกรม
 
+
+  ![image](https://user-images.githubusercontent.com/92081694/168820072-2d187ed6-e59e-42fd-bdea-44cd0a38bdd7.png)
+
+
 ### คำถาม ###
 1. โปรแกรมนี้ทำงานได้หรือไม่ ถ้าไม่ได้ ต้องแก้ไขอย่างไร
+```สามารถทำงานได้
+```
 2. ทำไมเราต้องมี properties ทั้งๆ ที่มี fields อยู่แล้ว แค่ประกาศเป็น public ก็ใช้งานจากที่ไหนก็ได้
-
+```
+ เพราะการกำหนด properties ต่าง ๆ สามารถกำหนดได้ว่าจะสามารถทำให้อ่านได้อย่างเดียว เขียนอย่างเดียว หรือทั้งเขียนและอ่านได้
+```
 
 ## การทดลอง 10.5 Read-only properties ##
 
@@ -88,48 +96,60 @@ class Program
 ```
 2. รันโปรแกรม บันทึกผล
 
-จากโปรแกรมข้างบน จะเห็นว่าสีของไฟจราจรที่โปรแกรมรายงานออกมาจะยังไม่ตรงตามความเป็นจริง เพราะเมื่อเราไม่ทำการกำหนดค่าให้กับ field นั้นๆ โปรแกรมก็จะดึงค่า default ที่กำหนดในคลาสมาใช้
+
+![image](https://user-images.githubusercontent.com/92081694/168820206-19cc8917-9c1d-4905-95d5-f3c441f4a81d.png)
+
+สีของไฟจราจรที่โปรแกรมรายงานออกมาจะยังไม่ตรงตามความเป็นจริง เพราะเมื่อเราไม่ทำการกำหนดค่าให้กับ field นั้นๆ โปรแกรมก็จะดึงค่า default ที่กำหนดในคลาสมา
 
 3. ให้แก้โปรแกรมเพื่อให้รายงานสีได้ถูกต้อง
 
 ```cs
 using System;
-class Lamp
+
+namespace PJ_10._5
 {
-    private int voltage = 12;
-    private string  color = "White";
-    public int  Voltage
+    class Lamp
     {
-        get {return voltage; }
+        private int voltage = 12;
+        private string color = "White";
+        public int Voltage
+        {
+            get { return voltage; }
+        }
+        public string Color
+        {
+            get { return color; }
+            set { color = value; }
+        }
     }
-    public string Color 
+    class Program
     {
-        get {return color; }
-        set {color = value; }
+        static void Main()
+        {
+            Lamp TrafficAmberLight = new Lamp();
+            Lamp TrafficRedLight = new Lamp();
+            Lamp TrafficGreenLight = new Lamp();
+
+            // กำหนดชื่อสีให้หลอดไฟจราจร
+            TrafficGreenLight.Color = "Green";
+            TrafficAmberLight.Color = "Amber";
+            TrafficRedLight.Color = "Red";
+
+            Console.WriteLine($"Traffic light #1 : color = {TrafficGreenLight.Color}, Voltage = {TrafficGreenLight.Voltage} V.");
+            Console.WriteLine($"Traffic light #2 : color = {TrafficAmberLight.Color}, Voltage = {TrafficAmberLight.Voltage} V.");
+            Console.WriteLine($"Traffic light #3 : color = {TrafficRedLight.Color}, Voltage = {TrafficRedLight.Voltage} V.");
+        }
     }
 }
-class Program
-{
-    static void Main()
-    {
-        Lamp TrafficAmberLight = new Lamp();
-        Lamp TrafficRedLight = new Lamp();
-        Lamp TrafficGreenLight = new Lamp();
 
-        // กำหนดชื่อสีให้หลอดไฟจราจร
-        TrafficGreenLight.Color = "Green";
-        TrafficAmberLight.Color = "Amber";
-        TrafficRedLight.Color = "Red";
-
-        Console.WriteLine($"Traffic light #1 : color = {TrafficGreenLight.Color}, Voltage = {TrafficGreenLight.Voltage} V.");
-        Console.WriteLine($"Traffic light #2 : color = {TrafficAmberLight.Color}, Voltage = {TrafficAmberLight.Voltage} V.");
-        Console.WriteLine($"Traffic light #3 : color = {TrafficRedLight.Color}, Voltage = {TrafficRedLight.Voltage} V.");
-    }
-}
 ```
 
 
 4. รันโปรแกรม บันทึกผล
+
+
+![image](https://user-images.githubusercontent.com/92081694/168820283-586068e0-1c34-41a4-b01f-a61bc344d94f.png)
+
 
 จากโปรแกรมข้างบน จะเห็นว่าสีของไฟจราจรที่โปรแกรมรายงานออกมาตรงตามความเป็นจริงแล้ว แต่เราต้องการกำหนดให้หลอดไฟรับแรงดัน 220 volt จึงต้องแก้ไขที่ field ที่ชื่อ voltage (แต่ต้องทำผ่าน property ที่ชื่อ Lamp.Voltage)
 
@@ -178,8 +198,14 @@ class Program
 6. รันโปรแกรม บันทึกผล
 
 
+![image](https://user-images.githubusercontent.com/92081694/168820412-c77071d9-0d73-450d-afed-98fc249fe83f.png)
+
+
 ### คำถาม ###
 1. โปรแกรมนี้ทำงานได้หรือไม่ ถ้าไม่ได้ เกิดจากอะไร
+```
+เกิดจากการกำหนดให้ property เป็นแบบอ่านได้อย่างเดียว จึงไม่สารถเปลี่ยนแปลงค่าได้
+```
 
 
 ## การทดลอง 10.6  properties ที่มีการทำงาน ##
@@ -232,6 +258,9 @@ class Program
 2. รันโปรแกรม บันทึกผล
 
 
+![image](https://user-images.githubusercontent.com/92081694/168820737-285c6d30-e43f-4b44-bff9-dc00a19cc8f4.png)
+
+
 
 ## การทดลอง 10.7  properties ที่มีการทำงานและเป็นชนิด read-only ##
 
@@ -260,7 +289,7 @@ class Person
 {
     private int age ;       // years
     const int MaxAge = 120;
-    const int MinAge = 1;
+    const int MinAge = 0;
     public int Age {
         get { return age; }
         set {
@@ -274,16 +303,6 @@ class Person
             }
             else
                 age = value;
-        } 
-    }
-    public string AgeGroup 
-    {
-        get 
-        {
-            if (age > 0 && age < 3) return "Babies";
-            // else if (age > 3 && age < 13) return "Children";
-            // TODO: เพิ่ม if else (....) return "..." ให้ครบทุกช่วงอายุ
-            else return "";
         } 
     }
 }
@@ -300,13 +319,15 @@ class Program
 
         Person GrandSon = new Person();
         GrandSon.Age = 1;
-        Console.WriteLine($"GrandSon.Age = {GrandSon.Age}, AgeGroup = {GrandSon.AgeGroup}");
-
-        // TODO: ทดสอบการแสดงผลให้ครบทุกช่วงอายุ
+        Console.WriteLine($"GrandSon.Age = {GrandSon.Age}");
 
     }
 }
 
+
 ```
 3. รันโปรแกรม โดยจะต้องมีการแสดงผลครบทุกช่วงอายุ
+
+![image](https://user-images.githubusercontent.com/92081694/168820922-2917154f-cbcb-468d-8cd0-d58e1ac29ffc.png)
+
 
