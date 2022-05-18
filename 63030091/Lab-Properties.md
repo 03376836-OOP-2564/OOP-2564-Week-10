@@ -201,7 +201,6 @@ class Program
 
 1. ให้นักศึกษาสร้าง project ชนิด Console application แล้วเขียน code ต่อไปนี้
 
-
 ```cs
 using System;
 class Person
@@ -244,9 +243,10 @@ class Program
 }
 
 ```
+
 2. รันโปรแกรม บันทึกผล
 
-
+![image](https://user-images.githubusercontent.com/92081884/169016781-678f1ba7-924d-43c7-97ab-adb978354c5a.png)
 
 ## การทดลอง 10.7  properties ที่มีการทำงานและเป็นชนิด read-only ##
 
