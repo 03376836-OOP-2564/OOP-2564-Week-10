@@ -79,8 +79,6 @@ namespace method_examples
 
 ```
 
-![image](https://user-images.githubusercontent.com/92081884/168954391-93066761-614f-4943-8a1d-874c48659217.png)
-
 2. เติมค่าลงในตารางต่อไปนี้ให้ครบถ้วน
 
 
@@ -106,6 +104,8 @@ namespace method_examples
 
 
 3. สรุปผลการทดลอง
+
+![image](https://user-images.githubusercontent.com/92081884/168954391-93066761-614f-4943-8a1d-874c48659217.png)
 
 ### คำถาม ###
 1. ตัวแปร instance คืออะไร
