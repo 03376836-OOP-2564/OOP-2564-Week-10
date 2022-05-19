@@ -78,20 +78,21 @@ namespace method_examples
 
 ```
 
+
 2. เติมค่าลงในตารางต่อไปนี้ให้ครบถ้วน
 
 
 |   วัตถุ    | hashcode| value|
 |----------|---------|------|
-| s1       |         | -    |
-| s2       |         | -    |
-| s3       |         | -    |
-| s1.id    |         |      |
-| s1.     |         |      |
-| s2.id    |         |      |
-| s2.     |         |      |
-| s3.id    |         |      |
-| s3.     |         |      |
+| s1       |0378734A |        -             |
+| s2       |033C0D9D|         -             |
+| s3       |011C7A8C|         -             |
+| s1.id    |011C7A8C|       1001            |
+| s1.      |A8F57D86| Computer Engineering  |
+| s2.id    |8E49D379|       1002            |
+| s2.      |E67BB4CD|Electrical Engineering |
+| s3.id    |8E49D379|      1003             |
+| s3.      |8E49D379|Mechanical Engineering |
 
 หลังจากสร้างและกำหนดค่าให้กับ instance ทั้งสามแล้ว ให้บันทึกค่าตัวแปร static ของคลาส (`    `) อีกครั้ง
 
@@ -101,6 +102,7 @@ namespace method_examples
 | s2.     |         |      |
 | s3.     |         |      |
 
+![10 1 1](https://user-images.githubusercontent.com/92080427/169262284-4159abd0-a3bb-43ac-aa93-051de1adfda4.png)
 
 3. สรุปผลการทดลอง
 
@@ -138,7 +140,9 @@ class Program
 ```
 
 2. บันทึกผลจากการรันโปรแกรม
-3. แก้ไข code ให้เป็นดังต่อไปนี้
+![10 1 2](https://user-images.githubusercontent.com/92080427/169264257-bb5b3658-0286-4fa3-b80a-b10843d81bee.png)
+
+4. แก้ไข code ให้เป็นดังต่อไปนี้
 
 ```cs
 using System;
@@ -163,6 +167,7 @@ class Program
 }
 ```
 4. บันทึกผลจากการรันโปรแกรม
+![10 1 3](https://user-images.githubusercontent.com/92080427/169264768-05b9e5b2-e920-463a-adae-3d87f11c83b5.png)
 
 ###  คำถาม ### 
 1. จงเปรียบเทียบผลที่ได้จากการรัน source code ในข้อ 1 และ ข้อ 3 ว่าเหมือนกันหรือไม่
