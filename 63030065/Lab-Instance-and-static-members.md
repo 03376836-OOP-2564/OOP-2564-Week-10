@@ -13,7 +13,7 @@ namespace method_examples
     class Student
     {
         int id;                 // instance member
-        static string     ;    // static member
+        static string  id2   ;    // static member
         internal void SetId(int value)
         {
             id = value;
@@ -21,7 +21,7 @@ namespace method_examples
         }
         internal void Set    (string value)
         {
-                 = value;
+             id2  = value;
             Show    ();
         }
 
@@ -32,7 +32,7 @@ namespace method_examples
 
         internal unsafe void Show    ()
         {
-            Console.WriteLine($"     : hashcode = [{    .GetHashCode():X}], value = {    }");
+            Console.WriteLine($"id2  : hashcode = [{id2.GetHashCode():X}], value = {id2}");
         }
     }
 
@@ -83,32 +83,40 @@ namespace method_examples
 
 |   วัตถุ    | hashcode| value|
 |----------|---------|------|
-| s1       |         | -    |
-| s2       |         | -    |
-| s3       |         | -    |
-| s1.id    |         |      |
-| s1.     |         |      |
-| s2.id    |         |      |
-| s2.     |         |      |
-| s3.id    |         |      |
-| s3.     |         |      |
+| s1       |0378734A| -    |
+| s2       |033C0D9D| -    |
+| s3       |011C7A8C| -    |
+| s1.id    | 3E9 | 1001 |
+| s1.id2   | 7E02E7A2 |Computer Engineering|
+| s2.id    | 3EA | 1002 |
+| s2.id2   |E6E548F4  |electrical Engineering|
+| s3.id    | 3EB | 1003 |
+| s3.id2   |31DA4AE2  |Mechanical Engineering|
 
 หลังจากสร้างและกำหนดค่าให้กับ instance ทั้งสามแล้ว ให้บันทึกค่าตัวแปร static ของคลาส (`    `) อีกครั้ง
 
 |   วัตถุ    | hashcode| value|
 |----------|---------|------|
-| s1.     |         |      |
-| s2.     |         |      |
-| s3.     |         |      |
+| s1.     |31DA4AE2|Mechanical Engineering|
+| s2.     |31DA4AE2|Mechanical Engineering|
+| s3.     |31DA4AE2|Mechanical Engineering|
 
+![image](https://user-images.githubusercontent.com/92078869/169321303-4581dc29-a67e-4b73-83ba-d4489dd99980.png)
 
 3. สรุปผลการทดลอง
+    
 
 ### คำถาม ###
 1. ตัวแปร instance คืออะไร
+เป็นตัวแปรที่ถูกประกาศภายใน Class เท่านั้น ไม่อยู่นอก method, constructor หรือ block สามารถเข้าถึงได้โดยตรงจากการเรียกใช้งานภายใน Class หรือเรียกภายนอก Class ผ่านทาง Interface Public Method
 2. ตัวแปร static คืออะไร
+เป็นตัวแปรที่มีค่าคงที่ เมื่อประกาศให้ตัวแปร จะมีค่าคงที่ไม่เปลี่ยนแปลง
 3. ตัวแปรทั้งสอง ทำงานต่างกันอย่างไร
+ ตัวแปร static มีค่าคงที่ ไม่เปลี่ยนแปลง
+ ตัวแปร instance จะถูกสร้างขึ้นใหม่ เมื่อมีการสร้าง object 
 4. ตัวแปรทั้งสอง ให้ผลต่างกันอย่างไร
+  ตัวแปร instance เข้าถึงได้โดยตรงจากการเรียกใช้งานภายใน Class หรือเรียกภายนอก Class และการสร้าง Object
+  ตัวแปร static เรียกใช้งานได้ทันทีจากภายใน Class และค่าของตัวแปรจะคงที่ไม่เปลี่ยนแปลง
 
 
 ##  การทดลองที่ 10.2 ##
