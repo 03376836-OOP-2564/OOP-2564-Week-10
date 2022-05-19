@@ -45,10 +45,17 @@ class Program
 
 ```
 2. บันทึกผลจากการรันโปรแกรม
+![image](https://user-images.githubusercontent.com/92079547/169328757-ec9ce4a4-4ded-4e18-af33-8ce2141d1a84.png)
+
 
 ### คำถาม ###
 1. โปรแกรมนี้ทำงานได้หรือไม่ ถ้าไม่ได้ ต้องแก้ไขอย่างไร
+
+ทำงานได้ปกติ
+
 2. ทำไมเราต้องมี properties ทั้งๆ ที่มี fields อยู่แล้ว แค่ประกาศเป็น public ก็ใช้งานจากที่ไหนก็ได้
+
+ทำให้สามารถแก้ไขได้
 
 
 ## การทดลอง 10.5 Read-only properties ##
@@ -87,6 +94,8 @@ class Program
 
 ```
 2. รันโปรแกรม บันทึกผล
+![image](https://user-images.githubusercontent.com/92079547/169330188-44eca12c-5aa9-4cc4-889c-567b48553f9c.png)
+
 
 จากโปรแกรมข้างบน จะเห็นว่าสีของไฟจราจรที่โปรแกรมรายงานออกมาจะยังไม่ตรงตามความเป็นจริง เพราะเมื่อเราไม่ทำการกำหนดค่าให้กับ field นั้นๆ โปรแกรมก็จะดึงค่า default ที่กำหนดในคลาสมาใช้
 
@@ -130,6 +139,8 @@ class Program
 
 
 4. รันโปรแกรม บันทึกผล
+![image](https://user-images.githubusercontent.com/92079547/169330462-82dfb274-f1a0-4367-b8d4-8ec794f62f8d.png)
+
 
 จากโปรแกรมข้างบน จะเห็นว่าสีของไฟจราจรที่โปรแกรมรายงานออกมาตรงตามความเป็นจริงแล้ว แต่เราต้องการกำหนดให้หลอดไฟรับแรงดัน 220 volt จึงต้องแก้ไขที่ field ที่ชื่อ voltage (แต่ต้องทำผ่าน property ที่ชื่อ Lamp.Voltage)
 
@@ -176,11 +187,12 @@ class Program
 }
 ```
 6. รันโปรแกรม บันทึกผล
+![image](https://user-images.githubusercontent.com/92079547/169330976-1f6a7a6e-4440-4cfa-acc0-ef7e7bc96c9c.png)
 
 
 ### คำถาม ###
 1. โปรแกรมนี้ทำงานได้หรือไม่ ถ้าไม่ได้ เกิดจากอะไร
-
+ไม่ได้ มีการ error เกิดจากแก้ไข เมื่อเป็น properties
 
 ## การทดลอง 10.6  properties ที่มีการทำงาน ##
 
@@ -230,6 +242,7 @@ class Program
 
 ```
 2. รันโปรแกรม บันทึกผล
+![image](https://user-images.githubusercontent.com/92079547/169332457-32b428d8-b3c3-40ba-a359-a7d3ae9e66ec.png)
 
 
 
@@ -309,4 +322,5 @@ class Program
 
 ```
 3. รันโปรแกรม โดยจะต้องมีการแสดงผลครบทุกช่วงอายุ
+![image](https://user-images.githubusercontent.com/92079547/169334613-1a80cbfd-06b9-4c33-b0d4-dc6f380f013e.png)
 
