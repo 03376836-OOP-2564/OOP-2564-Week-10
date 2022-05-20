@@ -13,7 +13,7 @@ namespace Project_10_1
         }
         internal void Setkla(string value)
         {
-             kla  = value;
+             kla = value;
              Showkla();
         }
 
@@ -24,7 +24,7 @@ namespace Project_10_1
 
         internal  void Showkla()
         {
-            Console.WriteLine($"bot : hashcode = [{Student.kla.GetHashCode():X}], value = {kla}");
+            Console.WriteLine($"kla : hashcode = [{Student.kla.GetHashCode():X}], value = {kla}");
         }
     }
 
