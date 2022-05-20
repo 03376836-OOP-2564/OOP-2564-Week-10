@@ -3,7 +3,7 @@ class Person
 {
     private int age;       // years
     const int MaxAge = 120;
-    const int MinAge = 1;
+    const int MinAge = 0;
     public int Age
     {
         get { return age; }
@@ -21,16 +21,7 @@ class Person
                 age = value;
         }
     }
-    public string AgeGroup
-    {
-        get
-        {
-            if (age > 0 && age < 3) return "Babies";
-            // else if (age > 3 && age < 13) return "Children";
-            // TODO: เพิ่ม if else (....) return "..." ให้ครบทุกช่วงอายุ
-            else return "";
-        }
-    }
+    
 }
 class Program
 {
@@ -40,12 +31,12 @@ class Program
         GrandPa.Age = 99;
         Console.WriteLine($"GrandPa.Age = {GrandPa.Age}");
         Person GrandMa = new Person();
-        GrandMa.Age = 125;
+        GrandMa.Age = 100;
         Console.WriteLine($"GrandMa.Age = {GrandMa.Age}");
 
         Person GrandSon = new Person();
-        GrandSon.Age = 1;
-        Console.WriteLine($"GrandSon.Age = {GrandSon.Age}, AgeGroup = {GrandSon.AgeGroup}");
+        GrandSon.Age = 15;
+        Console.WriteLine($"GrandSon.Age = {GrandSon.Age}");
 
         // TODO: ทดสอบการแสดงผลให้ครบทุกช่วงอายุ
 
