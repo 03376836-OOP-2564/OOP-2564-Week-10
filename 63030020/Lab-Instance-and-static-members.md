@@ -146,7 +146,10 @@ class Program
 ```
 
 2. บันทึกผลจากการรันโปรแกรม
-![image](https://user-images.githubusercontent.com/88755456/169652277-c07e375a-f8cb-433f-af25-25705723f63d.png
+
+![image](https://user-images.githubusercontent.com/88755456/169652384-9ac00ef5-d9d3-44b5-bcd0-25f90ba0e69f.png)
+
+
 3. แก้ไข code ให้เป็นดังต่อไปนี้
 
 ```cs
