@@ -1,3 +1,4 @@
+
 # การทดลอง Constants #
 
 ## การทดลอง 10.3 Constants ##
@@ -25,35 +26,7 @@ class Program
 ```
 
 2. บันทึกผลจากการรันโปรแกรม
-# การทดลอง Constants #
-
-## การทดลอง 10.3 Constants ##
-
-1. ให้นักศึกษาสร้าง project ชนิด Console application แล้วเขียน code ต่อไปนี้
-
-``` cs
-using System;
-class Circle
-{
-    public const double PI = 3.14;
-    static public void CalculateArea(double radius)
-    {
-        Console.WriteLine($"Area of circle = {PI * radius * radius} square unit.");
-    }
-    
-}
-class Program
-{
-    static void Main()
-    {
-        Circle.CalculateArea(radius: 10.0);
-    }
-}
-```
-
-2. บันทึกผลจากการรันโปรแกรม
-
-![image](https://user-images.githubusercontent.com/92081884/168988372-c206e282-f1d1-4e82-a63a-9b42fccd0d8c.png)
+![image](https://user-images.githubusercontent.com/92082299/169665771-c22f1d0a-a47a-4b83-8d5f-fa4676bbc5f9.png)
 
 3. ค่า PI จากตัวอย่างที่แล้ว เป็นค่าโดยประมาณที่ขาดความละเอียด จึงได้กดเครื่องคิดเลข ได้ค่า PI มาเป็นทศนิยม 10 หลัก จึงนำมาใส่ในโปรแกรมแทนที่ค่า PI เดิม ก่อนหาพื้นที่
 
