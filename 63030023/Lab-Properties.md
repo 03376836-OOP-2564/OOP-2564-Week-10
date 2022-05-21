@@ -328,3 +328,4 @@ class Program
 ```
 3. รันโปรแกรม โดยจะต้องมีการแสดงผลครบทุกช่วงอายุ
 
+![pic10.7](https://user-images.githubusercontent.com/92082676/169665028-021eb85d-17d1-4f7d-875c-c3aa987dbc99.png)
