@@ -54,6 +54,10 @@ class Program
 ```
 4. บันทึกผลจากการรันโปรแกรม
 
+![picture4.1](https://user-images.githubusercontent.com/92082676/169664333-08ccb72d-8f9c-42cd-b6fd-8fafe556e13f.png)
+
+![picture4.2](https://user-images.githubusercontent.com/92082676/169664344-c40f7421-9df4-4bef-8c10-2bb482e5c844.png)
+
 5. เปรียบเทียบและอธิบายสิ่งที่ได้จากการรันโปรแกรมในข้อ 1 และ ข้อ 3
 
 ### คำถาม ###
