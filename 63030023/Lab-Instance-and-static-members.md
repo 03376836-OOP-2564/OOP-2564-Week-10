@@ -161,7 +161,11 @@ class Program
 ```
 
 2. บันทึกผลจากการรันโปรแกรม
-3. แก้ไข code ให้เป็นดังต่อไปนี้
+
+![picture10.2](https://user-images.githubusercontent.com/92082676/169663784-0a0a978d-1702-4fa4-b45f-b1d8f75fce9a.png)
+
+
+4. แก้ไข code ให้เป็นดังต่อไปนี้
 
 ```cs
 using System;
