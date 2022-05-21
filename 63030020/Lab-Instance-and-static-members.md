@@ -146,14 +146,15 @@ class Program
 ```
 
 2. บันทึกผลจากการรันโปรแกรม
+![image](https://user-images.githubusercontent.com/88755456/169652277-c07e375a-f8cb-433f-af25-25705723f63d.png
 3. แก้ไข code ให้เป็นดังต่อไปนี้
 
 ```cs
 using System;
 class Student
 {
-	static public int id;
-	static public void PrintID()
+	public int id;
+	public void PrintID()
 	{
         Console.WriteLine($"student ID = {id}");
 	}
@@ -171,10 +172,15 @@ class Program
 }
 ```
 4. บันทึกผลจากการรันโปรแกรม
+![image](https://user-images.githubusercontent.com/88755456/169652327-0419421f-1301-4ffc-b020-b564d4b2987b.png)
+
 
 ###  คำถาม ### 
-1. จงเปรียบเทียบผลที่ได้จากการรัน source code ในข้อ 1 และ ข้อ 3 ว่าเหมือนกันหรือไม่
-2. เหตุใดผลการเปรียบเทียบจึงเป็นเช่นนั้น
+1. จงเปรียบเทียบผลที่ได้จากการรัน source code ในข้อ 1 และ ข้อ 3 ว่าเหมือนกันหรือไม่<br>
+`ผลที่ได้จากการรันโปรแกรมไม่ต่างกัน ต่างกันแค่การกำหนดค่า และการสร้าง instance ของ Student ในข้อ 3`
+2. เหตุใดผลการเปรียบเทียบจึงเป็นเช่นนั้น<br>
+`ข้อ 1 เป็น Method แบบ Statid`<br>
+`ข้อ 2 เป็น method แบบ Instance`
 
 
 
