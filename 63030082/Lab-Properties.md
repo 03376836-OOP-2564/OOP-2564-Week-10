@@ -45,10 +45,17 @@ class Program
 
 ```
 2. บันทึกผลจากการรันโปรแกรม
+![image](https://user-images.githubusercontent.com/92082299/169666007-0b0f6be8-e5b5-454a-a071-c57333003b4f.png)
+
 
 ### คำถาม ###
 1. โปรแกรมนี้ทำงานได้หรือไม่ ถ้าไม่ได้ ต้องแก้ไขอย่างไร
+
+ทำงานได้ปกติ
+
 2. ทำไมเราต้องมี properties ทั้งๆ ที่มี fields อยู่แล้ว แค่ประกาศเป็น public ก็ใช้งานจากที่ไหนก็ได้
+
+ทำให้สามารถแก้ไขได้
 
 
 ## การทดลอง 10.5 Read-only properties ##
@@ -87,6 +94,8 @@ class Program
 
 ```
 2. รันโปรแกรม บันทึกผล
+![image](https://user-images.githubusercontent.com/92082299/169666056-66c2aa06-deeb-4fb0-9cd5-b9a2583b1d85.png)
+
 
 จากโปรแกรมข้างบน จะเห็นว่าสีของไฟจราจรที่โปรแกรมรายงานออกมาจะยังไม่ตรงตามความเป็นจริง เพราะเมื่อเราไม่ทำการกำหนดค่าให้กับ field นั้นๆ โปรแกรมก็จะดึงค่า default ที่กำหนดในคลาสมาใช้
 
@@ -130,6 +139,8 @@ class Program
 
 
 4. รันโปรแกรม บันทึกผล
+![image](https://user-images.githubusercontent.com/92082299/169666101-f8588b59-e676-4f61-bf56-eccb2acb8946.png)
+
 
 จากโปรแกรมข้างบน จะเห็นว่าสีของไฟจราจรที่โปรแกรมรายงานออกมาตรงตามความเป็นจริงแล้ว แต่เราต้องการกำหนดให้หลอดไฟรับแรงดัน 220 volt จึงต้องแก้ไขที่ field ที่ชื่อ voltage (แต่ต้องทำผ่าน property ที่ชื่อ Lamp.Voltage)
 
@@ -176,11 +187,11 @@ class Program
 }
 ```
 6. รันโปรแกรม บันทึกผล
-
+![image](https://user-images.githubusercontent.com/92082299/169666135-55a7b0be-8204-4ebe-a790-d0f6fe6727fb.png)
 
 ### คำถาม ###
 1. โปรแกรมนี้ทำงานได้หรือไม่ ถ้าไม่ได้ เกิดจากอะไร
-
+ไม่ได้ มีการ error เกิดจากแก้ไข เมื่อเป็น properties
 
 ## การทดลอง 10.6  properties ที่มีการทำงาน ##
 
@@ -230,6 +241,7 @@ class Program
 
 ```
 2. รันโปรแกรม บันทึกผล
+![image](https://user-images.githubusercontent.com/92082299/169666317-a4ac6396-673b-42f4-acff-a77046911ded.png)
 
 
 
@@ -258,12 +270,14 @@ class Program
 using System;
 class Person
 {
-    private int age ;       // years
+    private int age;       // years
     const int MaxAge = 120;
     const int MinAge = 1;
-    public int Age {
+    public int Age
+    {
         get { return age; }
-        set {
+        set
+        {
             if (value > MaxAge)
             {
                 Console.WriteLine($"Error: maximum age  is {MaxAge} Years.");
@@ -274,17 +288,20 @@ class Person
             }
             else
                 age = value;
-        } 
+        }
     }
-    public string AgeGroup 
+    public string AgeGroup
     {
-        get 
+        get
         {
-            if (age > 0 && age < 3) return "Babies";
-            // else if (age > 3 && age < 13) return "Children";
-            // TODO: เพิ่ม if else (....) return "..." ให้ครบทุกช่วงอายุ
+            if (age >= 0 && age <= 2) return "Babies";
+            else if (age >= 3 && age <= 12) return "Children";
+            else if (age >= 13 && age <= 19) return "Teens";
+            else if (age >= 20 && age <= 30) return "Young Adults";
+            else if (age >= 31 && age <= 60) return "Adults";
+            else if (age >= 61 && age <= 120) return "Old Adults";
             else return "";
-        } 
+        }
     }
 }
 class Program
@@ -293,20 +310,35 @@ class Program
     {
         Person GrandPa = new Person();
         GrandPa.Age = 99;
-        Console.WriteLine($"GrandPa.Age = {GrandPa.Age}");
+        Console.WriteLine($"GrandPa.Age = {GrandPa.Age}, AgeGroup = {GrandPa.AgeGroup}");
         Person GrandMa = new Person();
         GrandMa.Age = 125;
-        Console.WriteLine($"GrandMa.Age = {GrandMa.Age}");
 
         Person GrandSon = new Person();
         GrandSon.Age = 1;
         Console.WriteLine($"GrandSon.Age = {GrandSon.Age}, AgeGroup = {GrandSon.AgeGroup}");
 
-        // TODO: ทดสอบการแสดงผลให้ครบทุกช่วงอายุ
+        Person Children = new Person();
+        Children.Age = 5;
+        Console.WriteLine($"GrandSon.Age = {Children.Age}, AgeGroup = {Children.AgeGroup}");
+
+        Person Teen = new Person();
+        Teen.Age = 16;
+        Console.WriteLine($"GrandSon.Age = {Teen.Age}, AgeGroup = {Teen.AgeGroup}");
+
+        Person Young_Adults = new Person();
+        Young_Adults.Age = 25;
+        Console.WriteLine($"GrandSon.Age = {Young_Adults.Age}, AgeGroup = {Young_Adults.AgeGroup}");
+
+        Person Adults = new Person();
+        Adults.Age = 40;
+        Console.WriteLine($"GrandSon.Age = {Adults.Age}, AgeGroup = {Adults.AgeGroup}");
 
     }
 }
-
 ```
 3. รันโปรแกรม โดยจะต้องมีการแสดงผลครบทุกช่วงอายุ
+![image](https://user-images.githubusercontent.com/92082299/169666949-63b417b4-0f5e-4773-a118-fc70134bcef9.png)
+
+
 
