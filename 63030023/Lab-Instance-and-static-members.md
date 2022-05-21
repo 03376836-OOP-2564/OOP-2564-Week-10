@@ -104,6 +104,8 @@ namespace method_examples
 
 3. สรุปผลการทดลอง
 
+![picture3](https://user-images.githubusercontent.com/92082676/169662501-f7935e5b-7a50-4d7a-80c8-1214c7beb33a.png)
+
 ### คำถาม ###
 1. ตัวแปร instance คืออะไร
 2. ตัวแปร static คืออะไร
