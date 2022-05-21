@@ -184,8 +184,7 @@ class Program
 }
 ```
 4. บันทึกผลจากการรันโปรแกรม
-
-![image](https://user-images.githubusercontent.com/92081884/168960075-53811cf8-6641-4b93-a95d-7299f28f631c.png)
+![image](https://user-images.githubusercontent.com/92082299/169665273-cdcba6f5-6bf1-408a-908b-1626af70ad14.png)
 
 ###  คำถาม ### 
 1. จงเปรียบเทียบผลที่ได้จากการรัน source code ในข้อ 1 และ ข้อ 3 ว่าเหมือนกันหรือไม่
