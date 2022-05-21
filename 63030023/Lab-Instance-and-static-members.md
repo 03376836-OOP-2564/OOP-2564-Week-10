@@ -96,10 +96,10 @@ namespace project_10_1
 หลังจากสร้างและกำหนดค่าให้กับ instance ทั้งสามแล้ว ให้บันทึกค่าตัวแปร static ของคลาส (`    `) อีกครั้ง
 
 |   วัตถุ    | hashcode| value|
-|----------|---------|------|
-| s1.     |         |      |
-| s2.     |         |      |
-| s3.     |         |      |
+|:----------:|:---------:|:------:|
+| s1.     | 2BDBFBE5 | Mechanical Engineering |
+| s2.     | 2BDBFBE5 | Mechanical Engineering |
+| s3.     | 2BDBFBE5 | Mechanical Engineering |
 
 
 3. สรุปผลการทดลอง
