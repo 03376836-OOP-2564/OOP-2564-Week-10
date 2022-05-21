@@ -193,6 +193,10 @@ class Program
 
 ![picture4](https://user-images.githubusercontent.com/92082676/169663851-2d668965-52a6-41db-9ef9-e6be97d94d1a.png)
 
+## แก้ไขโปรแกรม ##
+
+![pictureedit](https://user-images.githubusercontent.com/92082676/169664049-9d159a6f-cd8b-4e59-960c-8c685a098440.png)
+
 ###  คำถาม ### 
 1. จงเปรียบเทียบผลที่ได้จากการรัน source code ในข้อ 1 และ ข้อ 3 ว่าเหมือนกันหรือไม่
 2. เหตุใดผลการเปรียบเทียบจึงเป็นเช่นนั้น
