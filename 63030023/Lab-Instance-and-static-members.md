@@ -83,15 +83,15 @@ namespace project_10_1
 
 |   วัตถุ    | hashcode| value|
 |----------|---------|------|
-| s1       | 0378734A | -    |
-| s2       | 033C0D9D | -    |
-| s3       | 011C7A8C | -    |
-| s1.id    | 3E9 | 1001 |
-| s1.     | 48F2F7CF | Computer Engineering |
-| s2.id    | 3EA | 1002 |
-| s2.     | 34EF076 | Electrical Engineering |
-| s3.id    | 3EB | 1003 |
-| s3.     | 2BDBFBE5 | Mechanical Engineering |
+| s1       | 0378734A |          -           |
+| s2       | 033C0D9D |          -           |
+| s3       | 011C7A8C |          -           |
+| s1.id    |   3E9    |        1001          |
+| s1.      | 48F2F7CF | Computer Engineering |
+| s2.id    |   3EA    |        1002          |
+| s2.      | 34EF076  | Electrical Engineering |
+| s3.id    |   3EB    |        1003          |
+| s3.      | 2BDBFBE5 | Mechanical Engineering |
 
 หลังจากสร้างและกำหนดค่าให้กับ instance ทั้งสามแล้ว ให้บันทึกค่าตัวแปร static ของคลาส (`    `) อีกครั้ง
 
